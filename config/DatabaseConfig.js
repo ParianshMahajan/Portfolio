@@ -1,9 +1,6 @@
 const mongoose = require("mongoose");
 
-const DB = process.env.DATABASE.replace("<username>", process.env.USER).replace(
-  "<password>",
-  process.env.PASSWORD
-);
+const DB = process.env.DATABASE;
 
 mongoose
   .connect(DB)

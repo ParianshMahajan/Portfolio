@@ -3560,3 +3560,32 @@ body.absolute_header .breadcrumb_area {
 }
 
 /* END: Modal CSS */
+
+/* Success state for button */
+.btn.success {
+	background-color: #1fd325; /* Green background for success */
+	color: white; /* White text color */
+  }
+  
+  /* Loader state for button */
+  .btn.loading {
+	color: white; /* Keep original text color */
+  }
+  
+  /* Optional: Ensure proper styling for loader */
+  .loader {
+	border: 3px solid #f3f3f3; /* Light grey */
+	border-top: 3px solid #ffffff; /* White */
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+	animation: spin 1s linear infinite;
+	display: inline-block;
+	margin-right: 8px;
+  }
+  
+  @keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+  }
+  

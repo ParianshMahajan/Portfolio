@@ -1,5 +1,5 @@
 const express = require('express');
-const { serveFile, getStats } = require('../Controllers/PortfolioController');
+const { serveFile, getStats, registerQuery } = require('../Controllers/PortfolioController');
 
 const PortfolioRouter = express.Router();
 
@@ -12,6 +12,10 @@ PortfolioRouter
 PortfolioRouter
 .route('/stats')
 .get(getStats)
+
+PortfolioRouter
+.route('/query-submit')
+.post(registerQuery)
 
 
 

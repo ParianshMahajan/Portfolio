@@ -1,11 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+
 const dotenv = require("dotenv");
+dotenv.config({ path: "./config.env" });
+
 const cors = require('cors');
 const path = require('path');
+
+const db = require('./config/DatabaseConfig.js');
 const PortfolioRouter = require('./Routers/PortfolioRouter.js');
 
-dotenv.config({ path: "./config.env" });
 
 const app = express();
 
