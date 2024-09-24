@@ -88,9 +88,8 @@
             <div class="header-menu">
               <nav>
                 <ul>
-                  <li><a href="#skills-section">Skills</a></li>
                   <li><a href="#project-section">Projects</a></li>
-                  <li><a href="#specialization-section">Resume</a></li>
+                  <li><a href="#skills-section">Skills</a></li>
                   <li><a href="#works-section">Works</a></li>
                   <li><a href="#testimonials-section">Testimonials</a></li>
                   <li><a href="#contact-section">Contact</a></li>
@@ -98,7 +97,7 @@
               </nav>
             </div>
             <div class="header-button">
-              <a href="#" class="tj-btn-primary-2"
+              <a href="/resume" target="_blank" class="tj-btn-primary-2"
                 >Resume
                 <span class="icon_box">
                   <i class="flaticon-download icon_first"></i>
@@ -118,7 +117,7 @@
         </div>
       </div>
     </header>
-    <header class="tj-header-area style-2 header-2 header-sticky sticky-out">
+    <!-- <header class="tj-header-area style-2 header-2 header-sticky sticky-out">
       <div class="container">
         <div class="row">
           <div class="col-12 d-flex flex-wrap align-items-center">
@@ -166,7 +165,7 @@
           </div>
         </div>
       </div>
-    </header>
+    </header> -->
     <!-- HEADER END -->
 
     <main class="site-content" id="content">
@@ -191,26 +190,42 @@
                     </div>
 
                     <p class="lead">
-                      I'm a Full Stack Developer and DevOps Engineer skilled in building scalable web-apps with Next.js, Node.js, and Golang. I specialize in cloud deployments, DevOps practices and diverse tech like React, Spring Boot, and Kubernetes, delivering efficient solutions to complex challenges.
+                      I'm a Full Stack Developer and DevOps Engineer skilled in
+                      building scalable web-apps with Next.js, Node.js, and
+                      Golang. I specialize in cloud deployments, DevOps
+                      practices and diverse tech like React, Spring Boot, and
+                      Kubernetes, delivering efficient solutions to complex
+                      challenges.
                     </p>
                     <div class="button-box d-flex flex-wrap align-items-center">
-                      <a href="#" class="btn tj-btn-secondary"
-                        >Download CV <i class="flaticon-download"></i
-                      ></a>
-                      <ul class="ul-reset social-icons">
+                      <a href="/resume" target="_blank" class="btn tj-btn-secondary"
+                        >View Resume
+                        <span class="icon_box">
+                          <i class="flaticon-download icon_first"></i>
+                          <i class="flaticon-download icon_second"></i>
+                        </span>
+                      </a>
+                      <ul class="ul-reset social-icons" data-wow-delay=".6s">
                         <li>
-                          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                          <a href="mailto:parianshm@gmail.com"
+                            ><i class="fa-regular fa-envelope"></i
+                          ></a>
                         </li>
                         <li>
-                          <a href="#"><i class="fa-light fa-basketball"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"
+                          <a
+                            href="https://www.linkedin.com/in/pariansh-mahajan-3943b625b/"
                             ><i class="fa-brands fa-linkedin-in"></i
                           ></a>
                         </li>
                         <li>
-                          <a href="#"><i class="fa-brands fa-github"></i></a>
+                          <a href="https://www.instagram.com/parianshmahajan/"
+                            ><i class="fa-brands fa-instagram"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://github.com/ParianshMahajan"
+                            ><i class="fa-brands fa-github"></i
+                          ></a>
                         </li>
                       </ul>
                     </div>
@@ -309,9 +324,16 @@
                 </div>
                 <div class="project-left-content">
                   <div class="project_content">
-                    <h3 class="title">
-                      <button class="modal-popup" style="cursor: default">
+                    <h3 class="title" style="font-size: 27px">
+                      <button
+                        class="modal-popup"
+                        onclick="window.open('https://hosmas.ccstiet.com/', '_blank')"
+                      >
                         HOSMAS
+                        <i
+                          style="font-size: 19px; margin: 9px 0 0 3px"
+                          class="fa-solid fa-arrow-up-right-from-square"
+                        ></i>
                       </button>
                     </h3>
                     <span class="subtitle">Hostel Management System</span>
@@ -330,12 +352,6 @@
                     <li><a style="cursor: default">PosgreSQL</a></li>
                   </ul>
 
-                  <a
-                    class="site_url"
-                    href="https://hosmas.ccstiet.com/"
-                    target="_blank"
-                    >hosmas.ccstiet.com</a
-                  >
                   <!-- <ul class="project_links">
                     <li><a class="tj-btn-primary-2">
                       Github
@@ -363,9 +379,16 @@
                 </div>
                 <div class="project-left-content">
                   <div class="project_content">
-                    <h3 class="title">
-                      <button class="modal-popup" style="cursor: default">
+                    <h3 class="title" style="font-size: 27px">
+                      <button
+                        class="modal-popup"
+                        onclick="window.open('https://sitesync.pariansh.tech/', '_blank')"
+                      >
                         SITESYNC
+                        <i
+                          style="font-size: 19px; margin: 9px 0 0 3px"
+                          class="fa-solid fa-arrow-up-right-from-square"
+                        ></i>
                       </button>
                     </h3>
                     <span class="subtitle">Site Hosting System</span>
@@ -387,12 +410,6 @@
                     <li><a style="cursor: default">Bash Scripting</a></li>
                   </ul>
 
-                  <a
-                    class="site_url"
-                    href="https://sitesync.pariansh.tech/"
-                    target="_blank"
-                    >sitesync.pariansh.tech</a
-                  >
                   <ul class="project_links">
                     <li>
                       <a
@@ -427,13 +444,20 @@
                 </div>
                 <div class="project-left-content">
                   <div class="project_content">
-                    <h3 class="title">
-                      <button class="modal-popup">
+                    <h3 class="title" style="font-size: 27px">
+                      <button
+                        class="modal-popup"
+                        onclick="window.open('https://society-permissions.thapar.edu/', '_blank')"
+                      >
                         <a
                           href="https://society-permissions.thapar.edu/"
                           target="_blank"
                         >
                           SOCIETY PERMISSIONS
+                          <i
+                            style="font-size: 19px; margin: 9px 0 0 3px"
+                            class="fa-solid fa-arrow-up-right-from-square"
+                          ></i>
                         </a>
                       </button>
                     </h3>
@@ -453,12 +477,6 @@
                     <li><a style="cursor: default">PosgreSQL</a></li>
                   </ul>
 
-                  <a
-                    class="site_url"
-                    href="https://society-permissions.thapar.edu/"
-                    target="_blank"
-                    >society-permissions.thapar.edu</a
-                  >
                   <!-- <ul class="project_links">
                     <li><a class="tj-btn-primary-2">
                       Github
@@ -490,10 +508,17 @@
                 </div>
                 <div class="project-left-content">
                   <div class="project_content">
-                    <h3 class="title">
+                    <h3 class="title" style="font-size: 27px">
                       <button class="modal-popup">
-                        <a> YEAR LONG PORTAL </a>
+                        <a>
+                          YEAR LONG PORTAL
+                          <i
+                            style="font-size: 19px; margin: 9px 0 0 3px"
+                            class="fa-solid fa-arrow-up-right-from-square"
+                          ></i>
+                        </a>
                       </button>
+                      <a> </a>
                     </h3>
                     <span class="subtitle">Recruitment Protal</span>
 
@@ -536,10 +561,17 @@
                 </div>
                 <div class="project-left-content">
                   <div class="project_content">
-                    <h3 class="title">
-                      <button class="modal-popup">
+                    <h3 class="title" style="font-size: 27px">
+                      <button
+                        class="modal-popup"
+                        onclick="window.open('https://raptus.ccstiet.com/', '_blank')"
+                      >
                         <a href="https://raptus.ccstiet.com" target="_blank">
                           RAPTUS
+                          <i
+                            style="font-size: 19px; margin: 9px 0 0 3px"
+                            class="fa-solid fa-arrow-up-right-from-square"
+                          ></i>
                         </a>
                       </button>
                     </h3>
@@ -558,12 +590,6 @@
                     <li><a style="cursor: default">MongoDB</a></li>
                   </ul>
 
-                  <a
-                    class="site_url"
-                    href="https://raptus.ccstiet.com"
-                    target="_blank"
-                    >raptus.ccstiet.com</a
-                  >
                   <!-- <ul class="project_links">
                     <li><a class="tj-btn-primary-2">
                       Github
@@ -591,10 +617,17 @@
                 </div>
                 <div class="project-left-content">
                   <div class="project_content">
-                    <h3 class="title">
-                      <button class="modal-popup">
+                    <h3 class="title" style="font-size: 27px">
+                      <button
+                        class="modal-popup"
+                        onclick="window.open('https://sih.ccstiet.com/', '_blank')"
+                      >
                         <a href="https://sih.ccstiet.com/" target="_blank">
                           SIH PORTAL
+                          <i
+                            style="font-size: 19px; margin: 9px 0 0 3px"
+                            class="fa-solid fa-arrow-up-right-from-square"
+                          ></i>
                         </a>
                       </button>
                     </h3>
@@ -612,12 +645,6 @@
                     <li><a style="cursor: default">MongoDB</a></li>
                   </ul>
 
-                  <a
-                    class="site_url"
-                    href="https://sih.ccstiet.com/"
-                    target="_blank"
-                    >sih.ccstiet.com</a
-                  >
                   <ul class="project_links">
                     <li>
                       <a
@@ -625,11 +652,11 @@
                         class="tj-btn-primary-2"
                         target="_blank"
                       >
-                        Github
                         <span class="icon_box">
                           <i class="fa-regular fa-arrow-right icon_first"></i>
                           <i class="fa-regular fa-arrow-right icon_second"></i>
                         </span>
+                        Github
                       </a>
                     </li>
                   </ul>
@@ -957,7 +984,7 @@
       <!-- SKILLS SECTION END -->
 
       <!-- FunFact -->
-      <section class="skills-section style-2" id="skills-section">
+      <section class="skills-2-section style-2" id="skills-section">
         <div class="container">
           <div class="row">
             <div class="col-12">
@@ -1014,7 +1041,7 @@
         <div class="popup_modal_content">
           <div class="portfolio_info">
             <div class="portfolio_info_text">
-              <h2 class="title">DStudio</h2>
+              <h2 class="title" style="font-size: 27px">DStudio</h2>
               <div class="desc">
                 <p>
                   They are was greater open above shelter lets itself under
@@ -1472,7 +1499,7 @@
 
       <!-- TESTIMONIAL SECTION START -->
       <section class="testimonial-section style-2" id="testimonials-section">
-        <div class="container">
+        <!-- <div class="container">
           <div class="row">
             <div class="col-12">
               <div class="section-header style-2 text-center">
@@ -1607,7 +1634,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </section>
       <!-- TESTIMONIAL SECTION END -->
 
@@ -1771,13 +1798,25 @@
                     </p>
                   </div>
                   <ul class="ul-reset contact-info-list-3">
-                    <li class="wow fadeInRight" data-wow-delay=".3s">
+                    <li
+                      class="wow fadeInRight contact-icons"
+                      data-wow-delay=".3s"
+                    >
+                      <span><i class="fa-regular fa-phone"></i> </span>
                       <a href="tel:0123456789">+91 7876768113</a>
                     </li>
-                    <li class="wow fadeInRight" data-wow-delay=".4s">
+                    <li
+                      class="wow fadeInRight contact-icons"
+                      data-wow-delay=".4s"
+                    >
+                      <span><i class="fa-regular fa-envelope"></i> </span>
                       <a href="mailto:mail@mail.com">parianshm@gmail.com</a>
                     </li>
-                    <li class="wow fadeInRight" data-wow-delay=".5s">
+                    <li
+                      class="wow fadeInRight contact-icons"
+                      data-wow-delay=".5s"
+                    >
+                      <span><i class="fa-regular fa-house"></i> </span>
                       <p>
                         Thapar University, Patiala<br />Punjab, India, 147001
                       </p>
@@ -1794,8 +1833,8 @@
                       ></a>
                     </li>
                     <li>
-                      <a href="https://github.com/ParianshMahajan"
-                        ><i class="fa fa-instagram" aria-hidden="true"></i>
+                      <a href="https://www.instagram.com/parianshmahajan/"
+                        ><i class="fa-brands fa-instagram"></i>
                       </a>
                     </li>
                     <li>
@@ -1884,20 +1923,39 @@
             </div>
             <div class="footer-menu">
               <nav>
-                <ul>
-                  <li><a href="#services-section">Services</a></li>
-                  <li><a href="#works-section">Works</a></li>
-                  <li><a href="#resume-section">Resume</a></li>
-                  <li><a href="#skills-section">Skills</a></li>
-                  <li><a href="#testimonials-section">Testimonials</a></li>
-                  <li><a href="#contact-section">Contact</a></li>
+                <ul class="social-icons footer-icons" data-wow-delay=".6s">
+                  <li>
+                    <a href="mailto:parianshm@gmail.com"
+                      ><i class="fa-regular fa-envelope"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/pariansh-mahajan-3943b625b/"
+                      ><i class="fa-brands fa-linkedin-in"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/parianshmahajan/"
+                      ><i class="fa-brands fa-instagram"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/ParianshMahajan"
+                      ><i class="fa-brands fa-github"></i
+                    ></a>
+                  </li>
                 </ul>
               </nav>
             </div>
-            <div class="copy-text style-2">
+            <div class="copy-text">
               <p>
                 &copy; 2024 All rights reserved by
-                <a href="#" target="_blank">ThemeJunction</a>
+                <a
+                  href="https://www.linkedin.com/in/pariansh-mahajan-3943b625b/"
+                  target="_blank"
+                  >Pariansh Mahajan</a
+                >
               </p>
             </div>
           </div>
