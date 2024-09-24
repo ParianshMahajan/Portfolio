@@ -59,7 +59,7 @@ Description: Gerold - Personal Portfolio HTML5 Template
   --tj-black4: #585859;
   --tj-heading-primary: #102039;
   --tj-heading-secondary: #ea1826;
-  --tj-theme-blobs: #7133d4;
+  --tj-theme-blobs: #511ea1;
   --tj-theme-primary: #511ea1;
   --tj-theme-primary-1: #00065a;
   --tj-theme-primary-2: #805ce2;
@@ -1050,9 +1050,9 @@ body.loaded {
   position: absolute;
   width: 100%;
   height: 100%;
-  left: 46%;
-  top: 55%;
-  transform: translate(-50%, -50%) scale(1);
+  left: 45%;
+  top: 34%;
+  transform: translate(-50%, -50%) scale(1.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1062,10 +1062,10 @@ body.loaded {
 .hero-section .intro_text svg text {
   text-transform: uppercase;
   /* animation: stroke 4s; */
-  stroke-width: 1.2;
+  stroke-width: 1.5;
   stroke: var(--tj-theme-secondary);
   fill: transparent;
-  font-size: 240px;
+  font-size: 290px;
   display: inline-block;
   opacity: 0;
 }

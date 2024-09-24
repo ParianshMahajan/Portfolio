@@ -42,9 +42,6 @@
     rgba(115, 67, 210, 0) 100%
   );
 }
-.hero-section.style-2 .intro_text {
-  display: none;
-}
 .hero-wrrapper {
   display: flex;
   align-items: center;
@@ -703,16 +700,20 @@
   input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]),
 .tj-contact-form.style-2 .form_group textarea {
   background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--tj-grey-5);
-  border-radius: 0px;
-  padding: 15px 0px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.678);
+  color: var(--tj-white);
+}
+.tj-contact-form.style-2
+  .form_group
+  input:not([type="submit"]):not([type="radio"]):not([type="checkbox"])::placeholder,
+.tj-contact-form.style-2 .form_group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.678);
 }
 .tj-contact-form.style-2
   .form_group
   input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):focus,
 .tj-contact-form.style-2 .form_group textarea:focus {
-  border-bottom-color: var(--tj-theme-primary);
+  border-color: var(--tj-theme-primary);
 }
 .tj-contact-form.style-2 .form_group {
   margin-bottom: 30px;
@@ -720,12 +721,41 @@
 .contact-info-list-2 {
   max-width: 400px;
 }
+.contact-info-list-2 .icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+  color: white;
+  background-color: var(--tj-theme-blobs);
+  border: 2px solid var(--tj-theme-blobs);
+  margin-right: 8%;
+  line-height: 0px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-info-list-2 .text-box p {
+  margin-bottom: 0px;
+}
+.contact-info-list-2 .text-box a {
+  font-size: 18px;
+  font-weight: var(--tj-fw-medium);
+  color: var(--tj-white);
+  text-decoration: none;
+  transition: all 0.4s ease-in-out 0s;
+}
+.contact-info-list-2 .text-box a:hover {
+  color: var(--tj-theme-primary);
+}
 .contact-info-list-2 .desc {
   margin-bottom: 45px;
   font-size: 20px;
   color: #b19bd5;
 }
-.contact-info-list-2 p:last-child {
+/* .contact-info-list-2 p:last-child {
   margin-bottom: 0;
 }
 .contact-info-list-2 .text-box a {
@@ -735,6 +765,9 @@
 }
 .contact-info-list-2 .text-box a:hover {
   color: var(--tj-theme-primary);
+} */
+.contactList>li{
+  margin-bottom: 8%;
 }
 .contact-info-list-3 {
   display: flex;
