@@ -276,41 +276,71 @@ Description: Gerold - Personal Portfolio HTML5 Template
   	/  Preloader
   	/------------------------------------------------------*/
     const svg = document.getElementById("preloaderSvg");
-    const svgText = document.querySelector(
-      ".hero-section .intro_text svg text"
-    );
-    const tl = gsap.timeline({
-      onComplete: startStrokeAnimation,
+    const svgText = document.querySelector(".hero-section .intro_text svg text");
+    const app = document.getElementById("hero-sub-title");
+    
+    var typewriter = new Typewriter(app, {
+      loop: false,
+      delay: 75,
+      cursor: '|',        // Optional: Change cursor symbol
+      autoStart: true,    // Starts automatically without calling .start()
+      deleteSpeed: 750,    // Controls the speed of deleting characters
     });
+    
+    const tl = gsap.timeline();
+    
+    // Define curve and flat animations for the SVG path
     const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
     const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
-
+    
+    // Timeline animations
     tl.to(".preloader-heading .load-text , .preloader-heading .cont", {
       delay: 1.5,
       y: -100,
       opacity: 0,
-    });
-    tl.to(svg, {
-      duration: 0.5,
-      attr: { d: curve },
-      ease: "power2.easeIn",
-    }).to(svg, {
-      duration: 0.5,
-      attr: { d: flat },
-      ease: "power2.easeOut",
-    });
-    tl.to(".preloader", {
-      y: -1500,
-    });
-    tl.to(".preloader", {
-      zIndex: -1,
-      display: "none",
-    });
-
+    })
+      .to(svg, {
+        duration: 0.5,
+        attr: { d: curve },
+        ease: "power2.easeIn",
+      })
+      .to(svg, {
+        duration: 0.5,
+        attr: { d: flat },
+        ease: "power2.easeOut",
+      })
+      .to(".preloader", {
+        y: -1500,
+        onComplete: startStrokeAnimation, // Trigger animation right after preloader is off
+      })
+      .to(".preloader", {
+        zIndex: -1,
+        display: "none",
+      });
+    
+    // Start the stroke animation and typewriter after the preloader disappears
     function startStrokeAnimation() {
-      // Add a class or directly apply styles to trigger the stroke animation
+      // Start the typewriter effect
+      typewriter
+        .typeString("I am Pariansh")
+        .callFunction(() => {
+          // This function is called when typing completes
+      
+          const cursor = document.querySelector('.Typewriter__cursor');
+          if (cursor) {
+            setTimeout(() => {
+              cursor.classList.add('disableCursor'); // Add the class to hide the cursor
+            }, 2100); // 2 seconds delay
+          } else {
+            console.error("Cursor not found.");
+          }
+        })
+        .start();
+    
+      // Add the class to start the stroke animation
       svgText.classList.add("animate-stroke");
     }
+    
 
     /*------------------------------------------------------
   	/  Services Hover BG
@@ -390,6 +420,10 @@ Description: Gerold - Personal Portfolio HTML5 Template
     // 	});
     // }
 
+   
+
+
+
     // Fetch stats from the server
     async function fetchStats() {
       try {
@@ -435,72 +469,71 @@ Description: Gerold - Personal Portfolio HTML5 Template
   const form = document.getElementById("contact-form");
   const submitBtn = document.getElementById("submit-btn");
   const errorMessageDiv = document.getElementById("error-message");
-  
-  const originalButtonHTML = submitBtn.innerHTML;
-  
-  form.addEventListener("submit", async (e) => {
-	e.preventDefault(); // Prevent default form submission
-  
-	// Clear any previous error messages
-	errorMessageDiv.textContent = "";
-  
-	// Add loader inside the button and apply loading state
-	submitBtn.classList.add("loading");
-	submitBtn.disabled = true;
-	submitBtn.innerHTML = `<span class="loader"></span> Sending...`;
-  
-	const formData = {
-	  Name: document.getElementById("Name").value,
-	  Email: document.getElementById("Email").value,
-	  PhoneNumber: document.getElementById("PhoneNumber").value,
-	  Message: document.getElementById("Message").value,
-	};
-  
-	try {
-	  const response = await fetch("/query-submit", {
-		method: "POST",
-		headers: {
-		  "Content-Type": "application/json",
-		},
-		body: JSON.stringify(formData),
-	  });
-  
-	  const result = await response.json();
-  
-	  if (result.status) {
-		// On success, change button text to 'Sent', apply green background, and show tick
-		submitBtn.classList.remove("loading");
-		submitBtn.classList.add("success");
-		submitBtn.innerHTML = '✓ Sent';
-  
-		// Reset the form after 3 seconds
-		setTimeout(() => {
-		  submitBtn.classList.remove("success");
-		  submitBtn.disabled = false;
-		  submitBtn.innerHTML = originalButtonHTML; // Reset the button to its original state
-		  form.reset(); // Reset the form fields
-		}, 1500);
-	  } else {
-		// Display error below the button in red
-		errorMessageDiv.textContent = "Submission Failed: " + result.message;
-  
-		// Reset the button state
-		submitBtn.classList.remove("loading");
-		submitBtn.disabled = false;
-		submitBtn.innerHTML = originalButtonHTML;
-	  }
-	} catch (error) {
-	  console.error("Error:", error);
-  
-	  // Display error below the button in red
-	  errorMessageDiv.textContent = "An error occurred while submitting the form.";
-  
-	  // Reset the button state
-	  submitBtn.classList.remove("loading");
-	  submitBtn.disabled = false;
-	  submitBtn.innerHTML = originalButtonHTML;
-	}
-  });
-  
 
+  const originalButtonHTML = submitBtn.innerHTML;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    // Clear any previous error messages
+    errorMessageDiv.textContent = "";
+
+    // Add loader inside the button and apply loading state
+    submitBtn.classList.add("loading");
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `<span class="loader"></span> Sending...`;
+
+    const formData = {
+      Name: document.getElementById("Name").value,
+      Email: document.getElementById("Email").value,
+      PhoneNumber: document.getElementById("PhoneNumber").value,
+      Message: document.getElementById("Message").value,
+    };
+
+    try {
+      const response = await fetch("/query-submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.status) {
+        // On success, change button text to 'Sent', apply green background, and show tick
+        submitBtn.classList.remove("loading");
+        submitBtn.classList.add("success");
+        submitBtn.innerHTML = "✓ Sent";
+
+        // Reset the form after 3 seconds
+        setTimeout(() => {
+          submitBtn.classList.remove("success");
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalButtonHTML; // Reset the button to its original state
+          form.reset(); // Reset the form fields
+        }, 1500);
+      } else {
+        // Display error below the button in red
+        errorMessageDiv.textContent = "Submission Failed: " + result.message;
+
+        // Reset the button state
+        submitBtn.classList.remove("loading");
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalButtonHTML;
+      }
+    } catch (error) {
+      console.error("Error:", error);
+
+      // Display error below the button in red
+      errorMessageDiv.textContent =
+        "An error occurred while submitting the form.";
+
+      // Reset the button state
+      submitBtn.classList.remove("loading");
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalButtonHTML;
+    }
+  });
 })(jQuery);

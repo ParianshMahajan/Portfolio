@@ -38,6 +38,7 @@ Description: Gerold - Personal Portfolio HTML5 Template
 */
 @import url("../../../../../css2");
 @import url("../../../../../css2-1");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
   /* ----------------------------------
@@ -47,6 +48,7 @@ Description: Gerold - Personal Portfolio HTML5 Template
   --tj-ff-heading: "Sora", sans-serif;
   --tj-ff-russo: "Russo One", sans-serif;
   --tj-ff-fontawesome: "Font Awesome 6 Pro";
+  --tj-ff-poppins:"Poppins", system-ui;
   /* ----------------------------------
    @color declaration
   ------------------------------------ */
@@ -171,7 +173,7 @@ img {
 }
 
 body {
-  font-family: var(--tj-ff-body);
+  font-family: var(--tj-ff-poppins);
   font-size: var(--tj-fz-body);
   font-weight: var(--tj-fw-regular);
   color: var(--tj-body);
@@ -403,6 +405,7 @@ a h6:hover {
 .lead {
   font-size: 20px;
   margin-top: 42px;
+  font-weight: 300;
 }
 .social-icons {
   display: -webkit-box;
@@ -1103,10 +1106,10 @@ body.loaded {
 }
 
 .hero-sub-title {
-  font-size: 4rem;
+  font-size: 3.2rem;
   font-weight: var(--tj-fw-bold);
   display: block;
-  margin-bottom: 10px;
+  margin-bottom:1px;
 }
 
 .hero-title {
@@ -1137,9 +1140,11 @@ body.loaded {
   margin-left: 8%;
 }
 .hero-content-box .lead {
+  font-family: var(--tj-ff-poppins);
   max-width: 550px;
   width: 100%;
   margin-bottom: 0;
+  font-weight: 400;
 }
 .hero-content-box .button-box {
   margin-top: 50px;
@@ -3689,4 +3694,8 @@ body.absolute_header .breadcrumb_area {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.disableCursor{
+  display: none;
 }
