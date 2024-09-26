@@ -16,19 +16,22 @@ jobs:
       - name: Install SSH client & SSH pass
         run: |
           sudo apt-get update
-          sudo apt-get install openssh-client -y
-          sudo apt-get install sshpass -y
+          sudo apt-get install openssh-client sshpass -y
 
       
       - name: SSH into server and deploy
         run: |
-          sshpass -p "${{ secrets.VMPASS }}" ssh -o StrictHostKeyChecking=no paria@secondary.ccstiet.com \
-            'echo "${{ secrets.VMPASS }}" | sudo -S git -C /home/paria/backend/Portfolio pull origin main && \
-             echo "${{ secrets.VMPASS }}" | sudo -S docker compose -f /home/paria/backend/Portfolio/docker-compose.yml up --build -d'
+          sshpass -p "${{ secrets.vmpass }}" ssh -o StrictHostKeyChecking=no paria@secondary.ccstiet.com \
+            'cd /home/sat/Saturnalia24/server && \
+             echo "${{ secrets.vmpass }}" | sudo -S git pull && \
+             echo "${{ secrets.GIT_ACCESS_TOKEN }}" | sudo -S git config --global credential.helper store && \
+             echo "${{ secrets.GIT_ACCESS_TOKEN }}" | sudo -S git -c credential.username="pariansh" pull && \
+             echo "${{ secrets.vmpass }}" | sudo -S docker compose up --build -d'
           echo "Allowing Node.js Program to start properly"
           echo "Entering into sleep for 10 seconds.. Kindly wait..."
           sleep 10
 
+          
       - name: Check API Status with Retry
         run: |
           for i in {1..3}; do
