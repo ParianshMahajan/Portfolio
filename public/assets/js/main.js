@@ -353,12 +353,12 @@ Description: Gerold - Personal Portfolio HTML5 Template
     });
 
     // Step 2: Delay of 1.5 seconds
-    tl.to({}, { duration: 1 });  
+    tl.to({}, { duration: 1.4 });  
 
     // Step 3: Loading text sinks into the line and disappears
     tl.to(".loading-screen h3", {
         ease: "power4.inOut",
-        duration: 1.6,
+        duration: 1.8,
         y: "100%",  
         opacity: 0,  
     }, "<");  
