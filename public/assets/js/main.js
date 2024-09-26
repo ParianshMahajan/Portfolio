@@ -287,36 +287,36 @@ Description: Gerold - Personal Portfolio HTML5 Template
       deleteSpeed: 750,    // Controls the speed of deleting characters
     });
     
-    const tl = gsap.timeline();
+    // const tl = gsap.timeline();
     
-    // Define curve and flat animations for the SVG path
-    const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
-    const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
+    // // Define curve and flat animations for the SVG path
+    // const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
+    // const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
     
-    // Timeline animations
-    tl.to(".preloader-heading .load-text , .preloader-heading .cont", {
-      delay: 1.5,
-      y: -100,
-      opacity: 0,
-    })
-      .to(svg, {
-        duration: 0.5,
-        attr: { d: curve },
-        ease: "power2.easeIn",
-      })
-      .to(svg, {
-        duration: 0.5,
-        attr: { d: flat },
-        ease: "power2.easeOut",
-      })
-      .to(".preloader", {
-        y: -1500,
-        onComplete: startStrokeAnimation, // Trigger animation right after preloader is off
-      })
-      .to(".preloader", {
-        zIndex: -1,
-        display: "none",
-      });
+    // // Timeline animations
+    // tl.to(".preloader-heading .load-text , .preloader-heading .cont", {
+    //   delay: 1.5,
+    //   y: -100,
+    //   opacity: 0,
+    // })
+    //   .to(svg, {
+    //     duration: 0.5,
+    //     attr: { d: curve },
+    //     ease: "power2.easeIn",
+    //   })
+    //   .to(svg, {
+    //     duration: 0.5,
+    //     attr: { d: flat },
+    //     ease: "power2.easeOut",
+    //   })
+    //   .to(".preloader", {
+    //     y: -1500,
+    //     onComplete: startStrokeAnimation, // Trigger animation right after preloader is off
+    //   })
+    //   .to(".preloader", {
+    //     zIndex: -1,
+    //     display: "none",
+    //   });
     
     // Start the stroke animation and typewriter after the preloader disappears
     function startStrokeAnimation() {
@@ -340,7 +340,47 @@ Description: Gerold - Personal Portfolio HTML5 Template
       // Add the class to start the stroke animation
       svgText.classList.add("animate-stroke");
     }
+
+
+ const tl = gsap.timeline();
+
+    // Step 1: Show the loading text and line
+    tl.to([".loading-screen h3", ".loading-screen .line-frame"], {
+        ease: "power4.inOut",
+        duration: 1,
+        opacity: 1,
+        y: "0%",
+    });
+
+    // Step 2: Delay of 1.5 seconds
+    tl.to({}, { duration: 1.6 });  
+
+    // Step 3: Loading text sinks into the line and disappears
+    tl.to(".loading-screen h3", {
+        ease: "power4.inOut",
+        duration: 1.9,
+        y: "100%",  
+        opacity: 0,  
+    }, "<");  
+
+    // Step 4: The whole loading screen lifts up revealing the page
     
+    tl.to(".loading-screen", {
+        ease: "expo.out",
+        duration: 0.3,
+        onComplete: startStrokeAnimation,
+        y: -1500, 
+    });
+    // Step 5: Hide the loading screen (z-index update)
+    tl.set(".loading-screen", { zIndex: -100 });
+
+    // Step 6: Fade-in and lift up the main page
+    tl.from("#main", {
+        ease: "power3.inOut",
+        duration: 0.5,
+        opacity: 0, 
+        y: "0%",
+    }, "-=0.6"); 
 
     /*------------------------------------------------------
   	/  Services Hover BG
