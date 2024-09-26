@@ -22,8 +22,11 @@ jobs:
         run: |
           sshpass -p "${{ secrets.vmpass }}" ssh -o StrictHostKeyChecking=no paria@secondary.ccstiet.com \
             'cd /home/paria/backend/Portfolio && \
-             echo "${{ secrets.vmpass }}" | sudo -S git -c core.askpass=true pull && \
-             echo "${{ secrets.vmpass }}" | sudo -S docker compose up --build -d'
+             echo "${{ secrets.vmpass }}" | sudo -S git config --global credential.helper store && \
+             echo "${{ secrets.vmpass }}" | sudo -S git config --global credential.username "pariansh" && \
+             echo "https://pariansh:${{ secrets.GIT_ACCESS_TOKEN }}@github.com/ParianshMahajan/Portfolio.git" > ~/.git-credentials && \
+             echo "${{ secrets.vmpass }}" | sudo -S git pull && \
+             echo "${{ secrets.vmpass }}" | sudo docker compose up --build -d'
           echo "Allowing Node.js Program to start properly"
           echo "Entering into sleep for 10 seconds.. Kindly wait..."
           sleep 10
