@@ -22,7 +22,7 @@ jobs:
       - name: SSH into server and deploy
         run: |
           sshpass -p "${{ secrets.vmpass }}" ssh -o StrictHostKeyChecking=no paria@secondary.ccstiet.com \
-            'cd /home/paria/bakend/Portfolio && \
+            'cd /home/paria/backend/Portfolio && \
              echo "${{ secrets.vmpass }}" | sudo -S git pull && \
              echo "${{ secrets.GIT_ACCESS_TOKEN }}" | sudo -S git config --global credential.helper store && \
              echo "${{ secrets.GIT_ACCESS_TOKEN }}" | sudo -S git -c credential.username="pariansh" pull && \
