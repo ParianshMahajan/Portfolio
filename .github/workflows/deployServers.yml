@@ -22,9 +22,9 @@ jobs:
       
       - name: SSH into server and deploy
         run: |
-          sshpass -p "${{ secrets.vmpass }}" ssh -o StrictHostKeyChecking=no paria@secondary.ccstiet.com \
-            'echo "${{ secrets.vmpass }}" | sudo -S git -C /home/paria/backend/Portfolio pull origin main && \
-             echo "${{ secrets.vmpass }}" | sudo -S docker compose -f /home/paria/backend/Portfolio/docker-compose.yml up --build -d'
+          sshpass -p "${{ secrets.VMPASS }}" ssh -o StrictHostKeyChecking=no paria@secondary.ccstiet.com \
+            'echo "${{ secrets.VMPASS }}" | sudo -S git -C /home/paria/backend/Portfolio pull origin main && \
+             echo "${{ secrets.VMPASS }}" | sudo -S docker compose -f /home/paria/backend/Portfolio/docker-compose.yml up --build -d'
           echo "Allowing Node.js Program to start properly"
           echo "Entering into sleep for 10 seconds.. Kindly wait..."
           sleep 10
