@@ -327,10 +327,10 @@ Description: Gerold - Personal Portfolio HTML5 Template
         duration: 0.5,
         attr: { d: flat },
         ease: "power2.easeOut",
+        onComplete: startStrokeAnimation,
       })
       .to(".preloader", {
         y: -1500,
-        onComplete: startStrokeAnimation,
       })
       .to(".preloader", {
         zIndex: -1,
