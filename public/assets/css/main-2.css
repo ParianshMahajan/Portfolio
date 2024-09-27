@@ -90,10 +90,6 @@
 .social-icons.style-2 li a::before {
   background-color: var(--tj-theme-primary);
 }
-.footer-icons > li > a::before,
-.footer-icons > li > a:hover::before {
-  background: white;
-}
 
 /* Fun CSS */
 .funfact-area.style-2 {
@@ -131,11 +127,16 @@
 .about-area {
   margin-top: 35px;
 }
+.about-area>.row {
+  display: flex;
+  align-items: stretch;
+}
 .about-area .about-left-content {
   background: var(--tj-theme-accent-2);
   border-radius: 15px;
   border: 1px solid var(--tj-theme-secondary);
   padding: 40px 65px 40px;
+  height: 100%;
 }
 .about-area .about-left-content .title {
   font-weight: var(--tj-fw-medium);
@@ -173,6 +174,8 @@
   background: var(--tj-theme-accent-2);
   border: 1px solid var(--tj-theme-secondary);
   border-radius: 15px;
+  height: 100%;
+
 }
 .about-area .about-right-content .about-images {
   margin-top: -30px;
@@ -836,13 +839,7 @@
   -webkit-filter: blur(150px);
   filter: blur(150px);
 }
-.tj-footer-area.style-2 .footer-menu ul li a::before {
-  background: linear-gradient(
-    260deg,
-    var(--tj-theme-secondary) 0%,
-    var(--tj-theme-primary) 100%
-  );
-}
+
 .copy-text.style-2 p {
   color: var(--tj-theme-primary);
 }

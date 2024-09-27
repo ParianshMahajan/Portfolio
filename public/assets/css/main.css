@@ -646,10 +646,10 @@ body.loaded {
   z-index: 20;
 }
 
-.load-text span {
+/* .load-text span {
   -webkit-animation: loading 1s infinite alternate;
   animation: loading 1s infinite alternate;
-}
+} */
 
 .load-text span:nth-child(1) {
   -webkit-animation-delay: 0s;
@@ -1065,9 +1065,10 @@ body.loaded {
 .hero-section .intro_text svg text {
   text-transform: uppercase;
   /* animation: stroke 4s; */
-  stroke-width: 1.5;
+  stroke-width: 0.5;
   stroke: var(--tj-theme-secondary);
   fill: transparent;
+  text-shadow: 0px 0px 8px #5a2faf;
   font-size: 290px;
   display: inline-block;
   opacity: 0;
@@ -3719,28 +3720,28 @@ body.absolute_header .breadcrumb_area {
   will-change: transform;
 }
 
-.loading-screen .inner {
+.t-rex .inner {
   overflow: hidden;
 }
 
-.loading-screen .text-box {
+.t-rex .text-box {
   overflow: hidden;
   margin-bottom: 0px;
 }
 
-.loading-screen .text-box>h3 {
+.t-rex .text-box>h3 {
   color: white;
   font-size: 40px;
 }
 
-.loading-screen .line-frame {
+.t-rex .line-frame {
   overflow: hidden;
   height: 2px;
   width: 100%;
   position: relative;
 }
 
-.loading-screen .line {
+.t-rex .line {
   position: absolute; 
   width: 100%;
   height: 100%;
