@@ -640,6 +640,7 @@ body.loaded {
 
 .preloader .preloader-heading .load-text {
   font-size: 20px;
+  width: 100%;
   font-weight: 200;
   letter-spacing: 15px;
   text-transform: uppercase;
@@ -3722,6 +3723,11 @@ body.absolute_header .breadcrumb_area {
 
 .t-rex .inner {
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap:2
 }
 
 .t-rex .text-box {

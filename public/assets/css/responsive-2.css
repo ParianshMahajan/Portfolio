@@ -314,3 +314,15 @@
     margin-left: 0%;
   }
 }
+
+
+
+@media only screen and (max-width: 559px) {
+  .t-rex .text-box>h3 {
+    font-size: 32px;
+  }
+  .t-rex .inner{
+    scale: 0.7;
+  }
+  
+}
