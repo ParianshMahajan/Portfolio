@@ -278,6 +278,7 @@ Description: Gerold - Personal Portfolio HTML5 Template
     const svg = document.getElementById("preloaderSvg");
     const svgText = document.querySelector(".hero-section .intro_text svg text");
     const app = document.getElementById("hero-sub-title");
+    const lineFrame = document.getElementById("lineInit");
     
     var typewriter = new Typewriter(app, {
       loop: false,
@@ -286,20 +287,20 @@ Description: Gerold - Personal Portfolio HTML5 Template
       autoStart: true,
       deleteSpeed: 750,
     });
-    
     const tl = gsap.timeline();
     
     const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
     const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
     
     tl.to(".t-rex h3", {
+    onComplete:lineFrame.classList.add('line-frame'),
       ease: "power4.inOut",
       duration: 0.8,
       opacity: 1,
       y: "0%",
     })
     .to(".preloader-heading .load-text , .preloader-heading .cont", {
-      delay: 0.55,
+      delay: 0.65,
       y: -100,
       opacity: 0,
     })
