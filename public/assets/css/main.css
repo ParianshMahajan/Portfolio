@@ -3738,6 +3738,7 @@ body.absolute_header .breadcrumb_area {
 .t-rex .text-box>h3 {
   color: white;
   font-size: 40px;
+  font-weight: 300;
 }
 
 .t-rex .line-frame {
