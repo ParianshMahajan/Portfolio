@@ -3,17 +3,12 @@ const path = require("path");
 const fs = require("fs");
 
 const {
-  serveFile,
   getStats,
   registerQuery,
 } = require("../Controllers/PortfolioController");
 
 const PortfolioRouter = express.Router();
 
-	// Create JWT
-	PortfolioRouter
-		.route("/")
-		.get(serveFile);
 
 	PortfolioRouter
 		.route("/stats")
