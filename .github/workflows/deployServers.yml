@@ -22,7 +22,7 @@ jobs:
         run: |
           sshpass -p "${{ secrets.vmpass }}" ssh -o StrictHostKeyChecking=no paria@secondary.ccstiet.com \
             'cd /home/paria/backend/Portfolio && \
-             echo "${{ secrets.VMPASS }}" | sudo git pull https://pariansh:${{ secrets.GIT_ACCESS_TOKEN }}@github.com/ParianshMahajan/Portfolio.git && \
+             echo "${{ secrets.VMPASS }}" | sudo git pull && \
              echo "${{ secrets.VMPASS }}" | sudo docker compose up --build -d'
           echo "Allowing Node.js Program to start properly"
           echo "Entering into sleep for 10 seconds.. Kindly wait..."
